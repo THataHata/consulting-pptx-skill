@@ -15,9 +15,9 @@ A Claude Code skill for generating boardroom-quality decks: a slide-design ruleb
 > - Claude Code を使わず、ブラウザのチャットだけで同じ仕組みを使いたい → [Jinba App](https://jinba.io/ja?utm_source=github&utm_medium=readme&utm_campaign=consulting-pptx-skill&utm_content=top_app)
 > - 自社の資料規約・ブランドに合わせた専用版を作りたい、社内に展開したい → [ご相談はこちら](https://jinba.io/ja/contact-sales?utm_source=github&utm_medium=readme&utm_campaign=consulting-pptx-skill&utm_content=top_contact)
 
-## 本質は `references/slide-rules.md`（約110項目のスライド規約）
+## 本質は `references/slide-rules.md`
 
-このリポジトリでいちばん価値があるのは、実はテンプレでもスクリプトでもなく、**[slide-rules.md](references/slide-rules.md)** というテキストファイルです。実務の資料レビューで受けた指摘を1行ずつ書き溜めた約110項目。「結論はタイトルに書く」「角丸禁止」「塗りのあるボックスに枠線を付けない」「1資料1用語」「前提・定義は左、帰結は右」…。
+このリポジトリでいちばん価値があるのは、実はテンプレでもスクリプトでもなく、**[slide-rules.md](references/slide-rules.md)** というテキストファイルです。「結論はタイトルに書く」「角丸禁止」「塗りのあるボックスに枠線を付けない」「1資料1用語」「前提・定義は左、帰結は右」…。
 
 使い方は3つだけです。**AIに資料を作らせる前に毎回このファイルを読ませる。出力後に `scripts/check_deck.py` で違反を機械検出する。最後に `references/content-review-prompt.md` の指示文で、作り方を知らない別のエージェントにデッキを読ませ、日本語・論理・矛盾の指摘を受けて採用分だけ直す。** AIはセッションごとに記憶がリセットされるので、口頭で注意しても定着しません。ルールをファイルにして毎回読ませるのが定着させる方法です。
 
@@ -92,7 +92,6 @@ node scripts/check_layout.mjs mydeck.html           # フッター重なり・�
 
 ## カスタマイズ
 
-- **いちばん効くのは slide-rules.md への追記**です。レビューで受けた指摘を1行ずつ足していくと、御社専用の資料作成AIに育ちます
 - 色・書体は両パーツ集の `<style>` 冒頭 `:root` トークンで差し替えます。ブランドに合わせるときは両ファイルを同じ値にします
 - 生成した資料の**最終ページの出典行だけ**に「consulting-pptx-skill で作成」の注釈を入れます
 - PowerPoint（.pptx）が要るときは、PDFで渡す／`assets/SuperTemplate_62type.pptx` から手でコピーする、のどちらかです。HTML から PPTX への自動変換は含めていません。以前あった JSON から編集可能PPTXを書き出す仕組みは、使用頻度が低かったため外しました（git タグ `pipeline-archived` の時点のリポジトリに残っています）
