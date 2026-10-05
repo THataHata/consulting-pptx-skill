@@ -3,7 +3,7 @@
 **AIに「まじ」なPowerPointを作らせるためのClaude Codeスキル。**
 AIワークフロープラットフォーム [Jinba](https://jinba.io/ja?utm_source=github&utm_medium=readme&utm_campaign=consulting-pptx-skill&utm_content=top_intro) を提供するメンバーにより作成されました。
 
-スライドの設計規約（約110項目）、規約違反を見つける機械チェック、**62型のHTMLパーツ集**（基本27＋追加35）、型カタログPDFをまとめたものです。資料は HTML（16:9）で組み、Chrome で PDF に書き出します。
+スライドの設計規約、規約違反を見つける機械チェック、**62型のHTMLパーツ集**（基本27＋追加35）、型カタログPDFをまとめたものです。資料は HTML（16:9）で組み、Chrome で PDF に書き出します。
 
 進め方は、規約を読む → パーツ集から必要なパーツを取り出して1枚ずつ組む → 機械チェックを通す → 作り方を知らない別のエージェントにレビューさせる、の順です。
 
@@ -80,7 +80,7 @@ node scripts/check_layout.mjs mydeck.html           # フッター重なり・�
 | `SKILL.md` | AIへの指示書（スキルの本体）。考え方と手順だけを書き、詳細は `references/` に置く |
 | `templates/freeform_parts_16x9.html` | 基本パーツ集（27パーツ・1パーツ=1スライド・16:9） |
 | `templates/freeform_parts_more_16x9.html` | 追加パーツ集（35パーツ。チャート・比較表・マトリクス・計画系） |
-| `references/slide-rules.md` | スライド作成ルール正典（約110項目） |
+| `references/slide-rules.md` | スライド作成ルール正典 |
 | `references/archetype-catalog.md` | 62型の型カタログ（型ID・型名・使いどころ・どのパーツ集の何番か） |
 | `references/content-review-prompt.md` | フレッシュアイ・レビューの指示文。機械チェックのあと、作り方を伏せた別エージェントにデッキのファイルを渡して日本語・論理・破綻を拾わせ、採否表にして直す |
 | `references/ai-smell-lexicon.md` | AI臭ワード・言い回しのリストとセルフチェック |
